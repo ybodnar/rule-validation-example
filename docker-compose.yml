@@ -1,0 +1,14 @@
+version: '2'
+services:
+  mysql:
+    build: ./mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: db
+    ports:
+      - 3306:3306
+  spark:
+    build: ./spark
+    ports:
+      - 4040:4040
+      - 8080:8080
